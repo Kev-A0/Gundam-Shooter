@@ -25,6 +25,8 @@ public class GundamHealth : MonoBehaviour
             health = numOfLives;
         }
 
+
+
         for (int i = 0; i < lives.Length; i++)
         {
             if (i < health)
@@ -46,4 +48,36 @@ public class GundamHealth : MonoBehaviour
             }
         }
     }
+
+    public void loseHealth(int heartsLost)
+    {
+        health -= heartsLost;
+
+        if (health <= 0)
+        {
+            GetComponent<Player>().death();
+
+            foreach (Image life in lives)
+            {
+                life.sprite = emptyLives;
+            }
+        }
+    }
+
+    /// <summary>
+    /// When another game object's collider makes contact this collider.
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            loseHealth(1);
+            
+        }
+    }
+
+
+
 }
