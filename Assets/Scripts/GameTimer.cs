@@ -18,11 +18,11 @@ public class GameTimer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
 
-        time += Time.fixedDeltaTime;
+        time += Time.deltaTime;
         currentInterval = TimeSpan.FromSeconds(time);
-        text.text = currentInterval.ToString(@"mm\.ss");
+        text.text = currentInterval.ToString(@"mm\:ss");
     }
 }

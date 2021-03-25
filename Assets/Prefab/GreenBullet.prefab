@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2947269114738890509}
   - component: {fileID: 6623100654428293692}
   - component: {fileID: 2770389794391770917}
+  - component: {fileID: 3987465611914514190}
   m_Layer: 0
   m_Name: GreenBullet
   m_TagString: Bullet
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.28}
   m_EdgeRadius: 0
+--- !u!114 &3987465611914514190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2947269114738890508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d3bc02a51ecfe44a1c38813fc6986b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

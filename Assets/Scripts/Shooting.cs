@@ -14,7 +14,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update() 
     {
-        if(Input.GetButtonDown("space"))
+        if(Input.GetKeyDown("space"))
         {
             Shoot();
         }
@@ -27,5 +27,7 @@ public class Shooting : MonoBehaviour
         rd2D = laserBullet.GetComponent<Rigidbody2D>();
         // making the bullet shoot
         rd2D.AddForce(shootingPoint.up * laserMovenment, ForceMode2D.Impulse);
+
+
     }
 }

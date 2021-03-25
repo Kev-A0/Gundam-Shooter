@@ -37,6 +37,13 @@ public class Enemy_Driver : MonoBehaviour
         spawnList.Add(5, wave2);
         spawnList.Add(7, wave3);
 
+        // For in class showcase.
+        EnemyEvent showcase = new EnemyEvent();
+        wave3.Add(enemy_list[0]);
+        wave3.Add(enemy_list[1]);
+        wave3.Add(enemy_list[2]);
+        spawnList.Add(-5, wave3);
+
     }
 
 
@@ -47,9 +54,9 @@ public class Enemy_Driver : MonoBehaviour
         if (spawnList.ContainsKey((int)currentTime))
         {
             spawnList[(int)currentTime].Notify();
-            //spawnList.Remove((int)currentTime);
+            spawnList.Remove((int)currentTime);
         }
-        
-        
+
+
     }
 }

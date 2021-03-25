@@ -61,6 +61,7 @@ public class GundamHealth : MonoBehaviour
             {
                 life.sprite = emptyLives;
             }
+
         }
     }
 

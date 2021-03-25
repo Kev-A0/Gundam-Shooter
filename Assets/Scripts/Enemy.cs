@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour, ISpawn
     public int attackPower;
     public string enemyName;
     public GameObject enemyObject;
+
     [SerializeField]
     private int dropRate;
     [SerializeField]
