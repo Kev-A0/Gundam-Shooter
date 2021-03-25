@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// We extend from MonoBehaviourwhich allows us to drag and drop scripts or behaviors onto game objects to control them in Unity
+/// We extend from MonoBehaviour which allows us to drag and drop scripts or behaviors onto game objects to control them in Unity
+/// 
 /// Name: Saksham Bhardwaj
 /// StudentNo: A01185352
 /// </summary>

@@ -1,7 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// This is a projectile class for the laser
+/// It makes the projectile disppear when it is 
+/// out of the screen. 
+/// 
+/// Author: Brennen Chiu
+/// Date: March 23, 2021; Revision: 1.0
+/// </summary>
 public class Projectile : MonoBehaviour
 {
     // Start is called before the first frame update

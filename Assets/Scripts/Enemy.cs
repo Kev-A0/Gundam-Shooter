@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour, ISpawn
     /// </summary>
     public void shoot()
     {
-        // UNDONE: Wait until the Projectile class is finished.
+        // UNDONE: Implement feature in next iteration.
 
     }
 
@@ -64,11 +64,12 @@ public class Enemy : MonoBehaviour, ISpawn
     /// Usually called when the enemy loses all their health or goes off screen.
     /// </summary>
     public void destroy()
-    {
+    {   
+        // Remove the object from the current screne.
         Destroy(enemyObject);
 
+        // Use the dropRate to randomly determine if the Enemy drops a powerup.
         int dropChance = Random.Range(0, 10);
-
         if (dropChance >= dropRate)
         {   
             Instantiate(dropItem, GetComponent<Transform>().position, Quaternion.identity);
@@ -85,8 +86,8 @@ public class Enemy : MonoBehaviour, ISpawn
     }
 
     /// <summary>
-    /// Put the Enemy object into the current level.
-    /// 
+    /// An overloaded version of the Spawn method.
+    /// Provides the option to spawn the enemy in a random position on the man.
     /// </summary>
     /// <param name="x"></param>
     public void Spawn(bool randomSpawn = false)
@@ -96,18 +97,25 @@ public class Enemy : MonoBehaviour, ISpawn
         {
             // Get half of the sprites length to avoid spawning off camera.
             float spriteOffset = GetComponent<SpriteRenderer>().bounds.size.x / 2;
+            // Convert the screen space x and y to world space x and y.
             Vector2 positionOnScreen = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
 
+            // Add the offset to the range so the enemy doesn't spawn outside the camera.
             float left = -positionOnScreen.x + spriteOffset;
             float right = positionOnScreen.x - spriteOffset;
+
+            // Get the random y position of the Enemy 
             Vector2 randomPos = Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height));
             randomPos.x = Random.Range(left, right);
+
+            // Spawn the enemy on the Scene.
             Instantiate(enemyObject, randomPos, Quaternion.identity);
 
 
 
         } else
-        {
+        {   
+            // if the option of spawning randomly is false, spawn in the middle of the screen.
             Vector2 spawn_pos = Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height));
             Instantiate(enemyObject, spawn_pos, Quaternion.identity);
         }
@@ -120,9 +128,13 @@ public class Enemy : MonoBehaviour, ISpawn
     /// Put the Enemy object into the current level.
     /// </summary>
     public void Spawn()
-    {
+    {   
+        // Grab the middle position of the screen.
         Vector2 spawn_pos = new Vector2(0, Screen.height);
+
+        // Convert the screen space x and y to world space x and y.
         spawn_pos = Camera.main.ScreenToWorldPoint(spawn_pos);
+        // Spawn the Enemy in the Scene without rotation.
         Instantiate(enemyObject, spawn_pos, Quaternion.identity);
     }
 
@@ -131,7 +143,8 @@ public class Enemy : MonoBehaviour, ISpawn
     /// </summary>
     /// <param name="collision"></param>
     public void OnCollisionEnter2D(Collision2D collision)
-    {
+    {   
+        // When this enemy collides with another object, check if it's a bullet.
         if (collision.gameObject.tag == "Bullet")
         {   
             // Remove this enemy.
@@ -144,7 +157,8 @@ public class Enemy : MonoBehaviour, ISpawn
 
 
     void FixedUpdate()
-    {
+    {   
+        // Move the enemy in the -y direction every frame.
         move();
     }
 }

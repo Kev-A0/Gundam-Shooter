@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This is the player health class in the game. 
+/// This class allows the player to take damage from enemy
+/// and add health when pick up a powerup, which represents
+/// as an image.
+/// 
+/// Author: Brennen Chiu
+/// Date: March 23, 2021; Revision: 1.0
+/// </summary>
 public class GundamHealth : MonoBehaviour
 {
     public int health;
@@ -18,6 +27,11 @@ public class GundamHealth : MonoBehaviour
     }
 
     // Update is called once per frame
+    /// <summary>
+    /// This method gets updated once per frame and set 
+    /// health when it is bigger than number of lives, and 
+    /// setting each sprite to display life image and no image.
+    /// </summary>
     void Update()
     {
         if (health > numOfLives)
@@ -48,7 +62,12 @@ public class GundamHealth : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// This is a method for lossing a life and 
+    /// and destory player object when health is 0 
+    /// and change the canvas to emptyLives sprite.
+    /// </summary>
+    /// <param name="heatsLost"></param>
     public void loseHealth(int heartsLost)
     {
         health -= heartsLost;
@@ -78,7 +97,4 @@ public class GundamHealth : MonoBehaviour
             
         }
     }
-
-
-
 }

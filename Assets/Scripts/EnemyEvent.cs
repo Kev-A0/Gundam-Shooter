@@ -7,15 +7,10 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 /// <summary>
-/// A class that notifies all given Enemies.
-/// 
-/// Author: Kevin Lee
-/// Date: March 16, 2021; Revision: 1.0
-/// </summary>
-   
-/// <summary>
 /// This class's responsibility is to notify all given Enemies
 /// if an event occurs.
+/// Author: Kevin Lee
+/// Date: March 16, 2021; Revision: 1.0
 /// </summary>
 public class EnemyEvent
 {   

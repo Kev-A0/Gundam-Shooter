@@ -1,7 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// This is a shooting class for the player.
+/// When player hit spacebar, it will shoot a
+/// projectile outwards in a up position.
+/// 
+/// Author: Brennen Chiu
+/// Date: March 22, 2021; Revision: 1.0
+/// </summary>
 public class Shooting : MonoBehaviour
 {
     public GameObject laser;
@@ -20,6 +27,10 @@ public class Shooting : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This method is to handle the projectile that is shooting 
+    /// from the player.
+    /// </summary>
     void Shoot()
     {
         // creating the bullet

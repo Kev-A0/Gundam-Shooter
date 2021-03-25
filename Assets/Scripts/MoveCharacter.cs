@@ -1,7 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// This is the movement class for the player.
+/// The player can move up down left right with 
+/// with keyboard pressed. 
+/// 
+/// Author: Brennen Chiu
+/// Date: March 23, 2021; Revision: 1.0
+/// </summary>
 public class MoveCharacter : MonoBehaviour
 {
     // speed of the object

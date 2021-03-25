@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is responsible for making the background scroll.
+/// Create the illusion of scrolling game.
+/// 
+/// Author: Brennen Chiu
+/// Date: March 22, 2021; Revision: 1.0
+/// </summary>
 public class SpaceBackgroundScroll : MonoBehaviour
 {
     // Scrolling speed
