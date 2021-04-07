@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7733343965473836220
+--- !u!1 &2541720677734952245
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7140077950225413212}
-  - component: {fileID: 1925803188231938892}
-  - component: {fileID: 835753937416445692}
-  - component: {fileID: 8909517912382591021}
-  - component: {fileID: 7916847739821578475}
+  - component: {fileID: 2541720677734952242}
+  m_Layer: 0
+  m_Name: bullet_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2541720677734952242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541720677734952245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.278, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2541720676810340247}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4565330607049563551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2541720676810340247}
+  - component: {fileID: 5444788280886339040}
+  - component: {fileID: 1887335101135330106}
+  - component: {fileID: 6216891883120178871}
+  - component: {fileID: 4542796550050220148}
   m_Layer: 0
   m_Name: red_zaku
   m_TagString: Enemy
@@ -20,27 +50,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7140077950225413212
+--- !u!4 &2541720676810340247
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7733343965473836220}
+  m_GameObject: {fileID: 4565330607049563551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.383, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2541720677734952242}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1925803188231938892
+--- !u!212 &5444788280886339040
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7733343965473836220}
+  m_GameObject: {fileID: 4565330607049563551}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -84,14 +115,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &835753937416445692
+--- !u!50 &1887335101135330106
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7733343965473836220}
+  m_GameObject: {fileID: 4565330607049563551}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -105,13 +136,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8909517912382591021
+--- !u!114 &6216891883120178871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7733343965473836220}
+  m_GameObject: {fileID: 4565330607049563551}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c3b78f197fc5d745b417f633701bf9a, type: 3}
@@ -120,23 +151,27 @@ MonoBehaviour:
   health: 120
   direction: {x: 0, y: 0}
   moveSpeed: 1.5
-  attackPower: 30
   enemyName: Zaku
-  enemyObject: {fileID: 7733343965473836220}
+  enemyObject: {fileID: 4565330607049563551}
+  projectile: {fileID: 2607188228582415448, guid: 775311ce4a121154dbe4335f04b50953,
+    type: 3}
+  shootingPoint: {fileID: 2541720677734952242}
+  projectileSpeed: 3
+  shoot_time: 1
   dropRate: 4
   dropItem: {fileID: 3638249689482855358, guid: 8e22f1b1d122bf34f99efa28b28b85dc,
     type: 3}
---- !u!61 &7916847739821578475
+--- !u!61 &4542796550050220148
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7733343965473836220}
+  m_GameObject: {fileID: 4565330607049563551}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

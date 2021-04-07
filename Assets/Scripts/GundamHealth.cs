@@ -88,13 +88,18 @@ public class GundamHealth : MonoBehaviour
     /// When another game object's collider makes contact this collider.
     /// </summary>
     /// <param name="collision"></param>
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.gameObject.tag == "Enemy")
         {
             loseHealth(1);
             
+        }
+
+        if (collision.gameObject.tag == "Enemy_Bullet")
+        {
+            loseHealth(1);
+
         }
     }
 }

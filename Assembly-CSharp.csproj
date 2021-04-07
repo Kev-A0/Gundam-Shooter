@@ -64,12 +64,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\EnemyEvent.cs" />
-    <Compile Include="Assets\Scripts\Enemy_Driver.cs" />
+    <Compile Include="Assets\Scripts\Boss\Boss.cs" />
+    <Compile Include="Assets\Scripts\Boss\projectilePattern.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\EnemyEvent.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\Enemy_Driver.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\ISpawn.cs" />
     <Compile Include="Assets\Scripts\GameTimer.cs" />
     <Compile Include="Assets\Scripts\GundamHealth.cs" />
-    <Compile Include="Assets\Scripts\ISpawn.cs" />
     <Compile Include="Assets\Scripts\MoveCharacter.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Powerup.cs" />

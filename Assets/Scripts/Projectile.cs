@@ -20,11 +20,9 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 out_pos = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-        float y_pos = GetComponent<Transform>().position.y;
 
         // Use the renderer and screen position to check if the Bullet has left the screen.
-        if (!GetComponent<Renderer>().isVisible && y_pos >  out_pos.y)
+        if (!GetComponent<Renderer>().isVisible)
         {
             // Delete the Enemy when it's off screen.
             Destroy(this.gameObject);
