@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefab/Enemy_Bullet.prefab.meta
 guid: 775311ce4a121154dbe4335f04b50953
 PrefabImporter:
+=======
+guid: be098920cab1dd74e90667be8fbdf297
+DefaultImporter:
+>>>>>>> 2b89876eb9145ad7a584efdc893a507cff83b1dd:Assets/Scenes/MainMenu.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

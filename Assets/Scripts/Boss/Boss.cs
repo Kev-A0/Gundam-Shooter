@@ -23,7 +23,7 @@ public class Boss : Enemy
     /// The number of times an attack pattern can be called before switch to a random one.
     /// </summary>
     [SerializeField]
-    private int switchLimit = 10;
+    private int switchLimit = 5;
 
     /// <summary>
     /// Keeps track of how many times an attack has been used. After the attack has been
@@ -122,7 +122,7 @@ public class Boss : Enemy
         Rigidbody2D rb2D = enemyObject.GetComponent<Rigidbody2D>();
         rb2D.gravityScale = 0;
 
-        if (enemyObject.GetComponent<Transform>().position.y >= 4)
+        if (enemyObject.GetComponent<Transform>().position.y >= 3.5)
         {
             rb2D.MovePosition(rb2D.position + direction * moveSpeed * Time.fixedDeltaTime);
         }

@@ -18,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Bullets
+  - Background
   - 
   - 
   - 
@@ -45,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 1862827267
+    locked: 0
+  - name: Boss
+    uniqueID: 3244938351
     locked: 0
   - name: Default
     uniqueID: 0

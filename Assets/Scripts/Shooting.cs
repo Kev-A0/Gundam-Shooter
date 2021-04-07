@@ -11,12 +11,14 @@ using UnityEngine;
 /// </summary>
 public class Shooting : MonoBehaviour
 {
-    public GameObject laser;
+    public GameObject bullet;
     public Transform shootingPoint;
     public Rigidbody2D rd2D;
+    public GameObject laser_prefab;
     
 
-    public float laserMovenment = 15f;
+    public float bulletSpeed = 13f;
+    public float laserSpeed = 15f;
 
     // Update is called once per frame
     void Update() 
@@ -24,6 +26,11 @@ public class Shooting : MonoBehaviour
         if(Input.GetKeyDown("space"))
         {
             Shoot();
+        }
+
+        if (Input.GetKey("e"))
+        {
+            SpecialMove();
         }
     }
 
@@ -34,11 +41,22 @@ public class Shooting : MonoBehaviour
     void Shoot()
     {
         // creating the bullet
-        GameObject laserBullet = Instantiate(laser, shootingPoint.position, Quaternion.identity);
-        rd2D = laserBullet.GetComponent<Rigidbody2D>();
+        GameObject projectile = Instantiate(bullet, shootingPoint.position, Quaternion.identity);
+        rd2D = projectile.GetComponent<Rigidbody2D>();
         // making the bullet shoot
-        rd2D.AddForce(shootingPoint.up * laserMovenment, ForceMode2D.Impulse);
+        rd2D.AddForce(shootingPoint.up * bulletSpeed, ForceMode2D.Impulse);
 
 
+    }
+
+
+    void SpecialMove()
+    {   
+        //TODO: Add another condition, if special move variable is true.
+        if (Input.GetKey("e"))
+        {
+        GameObject laser = Instantiate(laser_prefab, shootingPoint.position, Quaternion.identity);
+        laser.GetComponent<Rigidbody2D>().AddForce(shootingPoint.up * laserSpeed, ForceMode2D.Impulse);
+        }
     }
 }

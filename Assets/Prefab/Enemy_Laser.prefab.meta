@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefab/Enemy_Laser.prefab.meta
 guid: 12a2a92638c297a449e24d11a8e669c4
 PrefabImporter:
+=======
+guid: 1b8d251f9af63b746bf2f7ffe00ebb9b
+DefaultImporter:
+>>>>>>> 2b89876eb9145ad7a584efdc893a507cff83b1dd:Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

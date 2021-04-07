@@ -83,7 +83,11 @@ public class projectilePattern : MonoBehaviour
 
             GameObject bullet = Instantiate(projectile, point.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().AddForce(bulletPath * projectileSpeed, ForceMode2D.Impulse);
+
+
         }
+
+ 
     }
 
     /// <summary>
