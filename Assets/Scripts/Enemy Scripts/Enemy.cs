@@ -8,37 +8,95 @@ using UnityEngine;
 /// 
 /// Author: Kevin Lee
 /// Date: March 16, 2021; Revision: 1.1
+/// Updated: April 7, 2021
 /// </summary>
 public class Enemy : MonoBehaviour, ISpawn
 {
+    /// <summary>
+    /// This represents the enemies health.
+    /// </summary>
     public int health;
+
+    /// <summary>
+    /// Represents the current direction this enemy is facing.
+    /// </summary>
     public Vector2 direction;
+
+    /// <summary>
+    /// This holds the current movement speed of the enemy.
+    /// </summary>
     public float moveSpeed;
+
+    /// <summary>
+    /// The name of the enemy.
+    /// </summary>
     public string enemyName;
+
+    /// <summary>
+    /// Holds the game object / prefab of this enemy.
+    /// </summary>
     public GameObject enemyObject;
+
+    /// <summary>
+    /// Holds the game object / prefab of the projectile that the enemy will shoot.
+    /// </summary>
     public GameObject projectile;
+
+    /// <summary>
+    /// Holds a reference to where the projectile will spawn / appear.
+    /// Used when the enemy shoots.
+    /// </summary>
     public Transform shootingPoint;
+
+    /// <summary>
+    /// Holds the speed of the projectile.
+    /// The default will be 10f.
+    /// </summary>
     public float projectileSpeed = 10f;
+    
+    /// <summary>
+    /// The time between each shot. After the prevous attack, the enemy
+    /// has to wait this many seconds before shooting again.
+    /// </summary>
     public float shoot_time = 0.5f;
 
+    /// <summary>
+    /// This is a counter that counts how many seconds have pass since the last projectile.
+    /// Increments every seconds and resets to 0 when it gets bigger or equal to shoot_time.
+    /// </summary>
     private float shoot_interval = 0;
 
+    /// <summary>
+    /// With a range between 0-10, holds the probablity of getting a powerup when this enemy
+    /// dies.
+    /// </summary>
     [SerializeField]
     private int dropRate;
+
+    /// <summary>
+    /// Holds a reference to a game object / prefab of a power up.
+    /// This power up will have a chance to drop when this enemy dies.
+    /// </summary>
     [SerializeField]
     private GameObject dropItem;
 
     /// <summary>
+    ///  This holds a reference to this game object's Rigidbody2D.
+    ///  This is used to apply physics to the gameobject.
+    ///  Updated: April 7, 2021
+    /// </summary>
+    public Rigidbody2D rb2D;
+
+    /// <summary>
     /// This is responsible for making this enemy move in the level.
+    /// Updated: April 7, 2021
     /// </summary>
     public virtual void move()
     {
-        this.direction.x = 0;
-        this.direction.y = -1;
-        Rigidbody2D rb2D = enemyObject.GetComponent<Rigidbody2D>();
-        rb2D.gravityScale = 0;
-
-
+        /** 
+         * Move this downwards with the current position + -1 in the y direction * movement speed * FixedDeltaTime.
+         * We use fixedDeltaTime to adjust for every frame. It keeps the movement smooth no matter the framerate.
+         */
         rb2D.MovePosition(rb2D.position + direction * moveSpeed * Time.fixedDeltaTime);
 
         // Get the x, y positions of the camera relative to the screen.
@@ -145,6 +203,7 @@ public class Enemy : MonoBehaviour, ISpawn
     /// <summary>
     /// When the enemy Collides with another object.
     /// Should take damage when hit by a bullet.
+    /// Updated: April 7, 2021
     /// </summary>
     /// <param name="collision"></param
     void OnTriggerEnter2D(Collider2D collision)
@@ -161,24 +220,41 @@ public class Enemy : MonoBehaviour, ISpawn
         }
     }
 
+    /// <summary>
+    /// A method provided from MonoBehavior.
+    /// This method gets called before the first frame.
+    /// </summary>
+    void Start()
+    {
+        // Change the direction of movement to south / downwards.
+        this.direction.x = 0;
+        this.direction.y = -1;
+    }
 
+
+    /// <summary>
+    /// A method provided by MonoBehaviour
+    /// This method gets called every frame.
+    /// Mostly used for physics.
+    /// </summary>
     void FixedUpdate()
     {
 
         // Move the enemy in the -y direction every frame.
         move();
-
-
-
-
     }
 
+    /// <summary>
+    /// A method provided by MonoBehaviour
+    /// This method is called every frame.
+    /// different because it's not used for physics.
+    /// </summary>
     void Update()
     {
         // Add the amount of seconds that have passed since the last frame to get a consistant time.
         shoot_interval += Time.deltaTime;
 
-
+        // If the time elapse if more or equal to the shoot_time, shoot a projectile and reset the interval to 0.
         if (shoot_interval >= shoot_time)
         {
             shoot();

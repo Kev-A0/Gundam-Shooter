@@ -161,6 +161,7 @@ MonoBehaviour:
   dropRate: 4
   dropItem: {fileID: 3638249689482855358, guid: 8e22f1b1d122bf34f99efa28b28b85dc,
     type: 3}
+  rb2D: {fileID: 1887335101135330106}
 --- !u!61 &4542796550050220148
 BoxCollider2D:
   m_ObjectHideFlags: 0

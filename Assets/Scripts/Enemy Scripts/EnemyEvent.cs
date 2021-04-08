@@ -10,7 +10,7 @@ using UnityEngine;
 /// This class's responsibility is to notify all given Enemies
 /// if an event occurs.
 /// Author: Kevin Lee
-/// Date: March 16, 2021; Revision: 1.1
+/// Date: March 16, 2021; Revision: 1.0
 /// </summary>
 public class EnemyEvent
 {   
@@ -52,7 +52,8 @@ public class EnemyEvent
     /// Notify all the enemies in the list to "spawn".
     /// </summary>
     public void Notify()
-    {
+    {   
+        // Go through each enemy and call the spawn method.
         foreach (Enemy e in enemyList)
         {      
             e.Spawn(true);

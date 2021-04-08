@@ -49,14 +49,13 @@ public class Shooting : MonoBehaviour
 
     }
 
-
+    /// <summary>
+    /// When the player presses the "e" button, the player shoots a massive laser.
+    /// </summary>
     void SpecialMove()
-    {   
+    {
         //TODO: Add another condition, if special move variable is true.
-        if (Input.GetKey("e"))
-        {
         GameObject laser = Instantiate(laser_prefab, shootingPoint.position, Quaternion.identity);
         laser.GetComponent<Rigidbody2D>().AddForce(shootingPoint.up * laserSpeed, ForceMode2D.Impulse);
-        }
     }
 }

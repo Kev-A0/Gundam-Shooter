@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Name: Saksham Bhardwaj
+/// StudentNo: A01185352
+/// </summary>
 public class SceneLoader : MonoBehaviour
 {
     public void PlayGame()
@@ -13,6 +17,5 @@ public class SceneLoader : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Quit");
     }
 }
