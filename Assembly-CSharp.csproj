@@ -68,6 +68,8 @@
     <Compile Include="Assets\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Boss\Boss.cs" />
     <Compile Include="Assets\Scripts\Boss\projectilePattern.cs" />
+    <Compile Include="Assets\Scripts\Database\FirebaseAccess.cs" />
+    <Compile Include="Assets\Scripts\Database\HighscoreUser.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyEvent.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy_Driver.cs" />
@@ -76,6 +78,8 @@
     <Compile Include="Assets\Scripts\GundamHealth.cs" />
     <Compile Include="Assets\Scripts\MoveCharacter.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Points\PointsMenu.cs" />
+    <Compile Include="Assets\Scripts\Points\PointsSystem.cs" />
     <Compile Include="Assets\Scripts\Powerup.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />
@@ -284,6 +288,30 @@
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>C:/Program Files/2019.4.19f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.App">
+      <HintPath>C:/Users/kleem/Documents/Unity Projects/Tech Pro Project/Gundam Shooter/Library/PackageCache/com.google.firebase.app@7.1.0/Firebase/Plugins/Firebase.App.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Platform">
+      <HintPath>C:/Users/kleem/Documents/Unity Projects/Tech Pro Project/Gundam Shooter/Library/PackageCache/com.google.firebase.app@7.1.0/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.TaskExtension">
+      <HintPath>C:/Users/kleem/Documents/Unity Projects/Tech Pro Project/Gundam Shooter/Library/PackageCache/com.google.firebase.app@7.1.0/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MiniJson">
+      <HintPath>C:/Users/kleem/Documents/Unity Projects/Tech Pro Project/Gundam Shooter/Library/PackageCache/com.google.firebase.app@7.1.0/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Compat">
+      <HintPath>C:/Users/kleem/Documents/Unity Projects/Tech Pro Project/Gundam Shooter/Library/PackageCache/com.google.firebase.app@7.1.0/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tasks">
+      <HintPath>C:/Users/kleem/Documents/Unity Projects/Tech Pro Project/Gundam Shooter/Library/PackageCache/com.google.firebase.app@7.1.0/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Auth">
+      <HintPath>C:/Users/kleem/Documents/Unity Projects/Tech Pro Project/Gundam Shooter/Library/PackageCache/com.google.firebase.auth@7.1.0/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>C:/Users/kleem/Documents/Unity Projects/Tech Pro Project/Gundam Shooter/Library/PackageCache/com.google.firebase.database@7.1.0/Firebase/Plugins/Firebase.Database.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/2019.4.19f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

@@ -221,6 +221,8 @@ MonoBehaviour:
   dropRate: 0
   dropItem: {fileID: 0}
   rb2D: {fileID: 5667500275610542604}
+  pointsSystem: {fileID: 485146493354107038, guid: 4230c7287c5b1a746bc7ee7f2a6da32b,
+    type: 3}
   patterns: {fileID: 2357111728007021387}
   switchLimit: 10
   switchCounter: 0

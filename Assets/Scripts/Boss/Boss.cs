@@ -57,6 +57,8 @@ public class Boss : Enemy
     /// </summary>
     private float shoot_interval = 0;
 
+
+
     /// <summary>
     /// The boss can shoot projectiles in different patterns.
     /// This gives the player a challenge.
@@ -109,6 +111,12 @@ public class Boss : Enemy
     public override void destroy()
     {
         Destroy(enemyObject);
+
+        // Add 1 point to the point counter
+        pointsSystem.addPoints(10);
+
+
+        pointsSystem.displayPointsMenu(true);
     }
 
     /// <summary>
@@ -158,7 +166,8 @@ public class Boss : Enemy
     /// Sets all important values first.
     /// </summary>
     void Awake()
-    {   
+    {
+        base.Awake();
         // Ensures the moving direction is downwards.
         this.direction.x = 0;
         this.direction.y = -1;
@@ -167,6 +176,7 @@ public class Boss : Enemy
         patternList.Add(patterns.wave);
         patternList.Add(patterns.burst);
         patternList.Add(patterns.laser);
+
     }
 
     /// <summary>
@@ -185,8 +195,12 @@ public class Boss : Enemy
 
             // Remove the bullet.
             Destroy(collision.gameObject);
+
+
         }
     }
+
+    
 
     /// <summary>
     /// This method is provided by MonoBehaviour.

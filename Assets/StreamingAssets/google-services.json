@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "853709953205",
+    "firebase_url": "https://gundam-shooter-default-rtdb.firebaseio.com",
+    "project_id": "gundam-shooter",
+    "storage_bucket": "gundam-shooter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853709953205:android:90fb29e59e643322ec06fc",
+        "android_client_info": {
+          "package_name": "com.company.Gundam_Shooter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "853709953205-hv615nhq6hvh1rlejis87h5o4ot1jteg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPXqj0u7TvfwCp6bwmyduLS1-SkDQ2kj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "853709953205-hv615nhq6hvh1rlejis87h5o4ot1jteg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

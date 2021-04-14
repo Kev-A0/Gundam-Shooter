@@ -12,24 +12,22 @@ using UnityEngine;
 /// </summary>
 public class Player : MonoBehaviour
 {
-    public GameObject player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    /// <summary>
+    /// This is the PointsSystem. 
+    /// Added: April 13, 2021
+    /// </summary>
+    public GameObject pointsSystem;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject player;
+    
     /// <summary>
     /// This method is to make the player disappear from 
-    /// the screen.
+    /// the screen. Displays the points menu
+    /// Updated: April 14, 2021
     /// </summary>
     public void death()
     {
         Destroy(player);
+        pointsSystem.GetComponent<PointsSystem>().displayPointsMenu(true);
     }
 }

@@ -99,7 +99,7 @@ public class Enemy_Driver : MonoBehaviour
         }
 
         // Set a time for the boss to spawn.
-        spawnList.Add(60, boss_event);
+        spawnList.Add(2, boss_event);
 
 
     }

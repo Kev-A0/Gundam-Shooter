@@ -9,6 +9,8 @@ TagManager:
   - PowerUp
   - Enemy_Bullet
   - Boss Health Bar
+  - PointsSystem
+  - PointsMenu
   layers:
   - Default
   - TransparentFX

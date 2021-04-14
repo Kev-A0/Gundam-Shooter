@@ -88,6 +88,12 @@ public class Enemy : MonoBehaviour, ISpawn
     public Rigidbody2D rb2D;
 
     /// <summary>
+    /// This is the points system. Allows this class to add points to the counter.
+    /// Added: April 13, 2021
+    /// </summary>
+    protected PointsSystem pointsSystem;
+
+    /// <summary>
     /// This is responsible for making this enemy move in the level.
     /// Updated: April 7, 2021
     /// </summary>
@@ -136,6 +142,9 @@ public class Enemy : MonoBehaviour, ISpawn
     {   
         // Remove the object from the current screne.
         Destroy(enemyObject);
+
+        // Add 1 point to the point counter
+        pointsSystem.addPoints(1);
 
         // Use the dropRate to randomly determine if the Enemy drops a powerup.
         int dropChance = Random.Range(0, 10);
@@ -260,5 +269,11 @@ public class Enemy : MonoBehaviour, ISpawn
             shoot();
             shoot_interval = 0;
         }
+    }
+
+    protected void Awake()
+    {
+        pointsSystem = GameObject.FindGameObjectWithTag("PointsSystem")
+        .GetComponent<PointsSystem>();
     }
 }
