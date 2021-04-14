@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour, ISpawn
     private int dropRate;
     [SerializeField]
     private GameObject dropItem;
+    [SerializeField]
+    private GameObject specialDropItem;
 
     /// <summary>
     /// This is responsible for making this enemy move in the level.
@@ -84,6 +86,11 @@ public class Enemy : MonoBehaviour, ISpawn
         if (dropChance >= dropRate)
         {   
             Instantiate(dropItem, GetComponent<Transform>().position, Quaternion.identity);
+        }
+        int specialDropChance = Random.Range(0, 50);
+        if (specialDropChance <= dropRate)
+        {
+            Instantiate(specialDropItem, GetComponent<Transform>().position, Quaternion.identity);
         }
     }
 

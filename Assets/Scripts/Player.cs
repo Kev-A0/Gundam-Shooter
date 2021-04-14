@@ -13,6 +13,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject player;
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,9 @@ public class Player : MonoBehaviour
     /// </summary>
     public void death()
     {
+
+       // anim.SetBool("isDead", true);
+        //player.gameObject.SetActive(true);
         Destroy(player);
     }
 }

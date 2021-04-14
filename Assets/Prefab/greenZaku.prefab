@@ -187,3 +187,5 @@ MonoBehaviour:
   dropRate: 5
   dropItem: {fileID: 3638249689482855358, guid: 8e22f1b1d122bf34f99efa28b28b85dc,
     type: 3}
+  specialDropItem: {fileID: 6607764264009415521, guid: 09d274fef4aad954aaf1e21f448cf2ee,
+    type: 3}

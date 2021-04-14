@@ -39,13 +39,12 @@ public class Powerup : MonoBehaviour {
 
             switch (powerupID)
             {
-/*                case 0: //case 0 signifies Weapon powerup(Triple shot)
-                    if (player.getIsTripleShotActive() == true)
+                case 0: //case 0 signifies Weapon powerup(Special shot)
+                    if (player.GetComponent<GundamSpecial>().specialAvaliable < player.GetComponent<GundamSpecial>().numOfSpecial)
                     {
-                        player.setIsAnotherTripleShot();
+                        player.GetComponent<GundamSpecial>().specialAvaliable++;
                     }
-                    player.TripleShotActive();
-                    break;*/
+                    break;
 
                 case 1://case 1 signifies Health powerup(Health Boost)
                     if (player.GetComponent<GundamHealth>().health < player.GetComponent<GundamHealth>().numOfLives)
@@ -53,10 +52,6 @@ public class Powerup : MonoBehaviour {
                         player.GetComponent<GundamHealth>().health++;
                     }
                     break;
-
-/*                case 2://case 2 signifies Shield powerup(Shield)
-                    player.ShieldsActive();
-                    break;*/
             }
 
             Destroy(this.gameObject);//Destroys this gameobject when it exits the screen
