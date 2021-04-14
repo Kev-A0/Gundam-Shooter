@@ -220,6 +220,7 @@ MonoBehaviour:
   shoot_time: 0.5
   dropRate: 0
   dropItem: {fileID: 0}
+  rb2D: {fileID: 5667500275610542604}
   patterns: {fileID: 2357111728007021387}
   switchLimit: 10
   switchCounter: 0

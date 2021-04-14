@@ -10,27 +10,45 @@ using UnityEngine.UI;
 /// Date: March 20, 2021; Revision: 1.0
 /// </summary>
 public class GameTimer : MonoBehaviour
-{
+{   
+    /// <summary>
+    /// This variables holds the current time.
+    /// </summary>
     public float time;
+
+    /// <summary>
+    /// The variables holds a TimeSpan object that will help format the time.
+    /// </summary>
     private TimeSpan currentInterval;
-    private Text text;
+
+    /// <summary>
+    /// The holds a reference to the Text Canvas element.
+    /// Used to visually display the current time.
+    /// </summary>
+    private Text timeUItext;
 
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Start is called before the first frame update
+    /// </summary>
     void Start()
     {
         time = 0f;
-        text = GetComponent<Text>();
+        timeUItext = GetComponent<Text>();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary
     void Update()
     {
         // Add the amount of seconds that have passed since the last frame to get a consistant time.
         time += Time.deltaTime;
+
         // Format the time
         currentInterval = TimeSpan.FromSeconds(time);
+
         // Set the UI element to the current time.
-        text.text = currentInterval.ToString(@"mm\:ss");
+        timeUItext.text = currentInterval.ToString(@"mm\:ss");
     }
 }
