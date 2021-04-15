@@ -15,22 +15,43 @@ public class Shooting : MonoBehaviour
     public Transform shootingPoint;
     public Rigidbody2D rd2D;
     public GameObject laser_prefab;
-    
 
     public float bulletSpeed = 13f;
     public float laserSpeed = 15f;
 
+    private float timeLeft = 1.0f;
+
     // Update is called once per frame
     void Update() 
     {
-        if(Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space"))
         {
             Shoot();
         }
 
-        if (Input.GetKey("e"))
+        // This is the special shot part
+        if (GetComponent<GundamSpecial>().specialAvaliable == 0)
         {
-            SpecialMove();
+            if (Input.GetKey("e"))
+            {
+                Debug.Log("e is disable");
+            }
+        }
+        else if (GetComponent<GundamSpecial>().specialAvaliable == 1)
+        {
+            if (Input.GetKey("e"))
+            {
+                timeLeft -= Time.deltaTime;
+                SpecialMove();
+
+                // if timer goes to zero, it will disable the special features
+                if (timeLeft < 0)
+                {
+                    // here is to minus the special avaliablilty
+                    GetComponent<GundamSpecial>().specialAvaliable -= GetComponent<GundamSpecial>().specialAvaliable;
+                    timeLeft = 1.0f;
+                }
+            }
         }
     }
 
@@ -45,8 +66,6 @@ public class Shooting : MonoBehaviour
         rd2D = projectile.GetComponent<Rigidbody2D>();
         // making the bullet shoot
         rd2D.AddForce(shootingPoint.up * bulletSpeed, ForceMode2D.Impulse);
-
-
     }
 
     /// <summary>
@@ -54,7 +73,6 @@ public class Shooting : MonoBehaviour
     /// </summary>
     void SpecialMove()
     {
-        //TODO: Add another condition, if special move variable is true.
         GameObject laser = Instantiate(laser_prefab, shootingPoint.position, Quaternion.identity);
         laser.GetComponent<Rigidbody2D>().AddForce(shootingPoint.up * laserSpeed, ForceMode2D.Impulse);
     }

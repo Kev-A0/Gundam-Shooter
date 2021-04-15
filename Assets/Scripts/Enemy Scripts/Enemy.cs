@@ -81,6 +81,16 @@ public class Enemy : MonoBehaviour, ISpawn
     private GameObject dropItem;
 
     /// <summary>
+    /// Holds a reference to game object / prefab of a special power up.
+    /// This power up will have a lower chance to drop when this enemy dies.
+    /// 
+    /// Author : Brennen Chiu
+    /// Date: April 13th, 2021
+    /// </summary>
+    [SerializeField]
+    private GameObject specialDropItem;
+
+    /// <summary>
     ///  This holds a reference to this game object's Rigidbody2D.
     ///  This is used to apply physics to the gameobject.
     ///  Updated: April 7, 2021
@@ -151,6 +161,13 @@ public class Enemy : MonoBehaviour, ISpawn
         if (dropChance >= dropRate)
         {   
             Instantiate(dropItem, GetComponent<Transform>().position, Quaternion.identity);
+        }
+
+        // use dropRate to determine if the Enemy would drop the speical powerup by a chance of around 5%
+        int specialDropChance = Random.Range(0, 100);
+        if (specialDropChance <= dropRate)
+        {
+            Instantiate(specialDropItem, GetComponent<Transform>().position, Quaternion.identity);
         }
     }
 

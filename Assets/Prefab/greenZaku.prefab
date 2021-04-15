@@ -187,6 +187,6 @@ MonoBehaviour:
   dropRate: 5
   dropItem: {fileID: 3638249689482855358, guid: 8e22f1b1d122bf34f99efa28b28b85dc,
     type: 3}
-  rb2D: {fileID: 1326425827952264471}
-  pointsSystem: {fileID: 485146493354107038, guid: 4230c7287c5b1a746bc7ee7f2a6da32b,
+  specialDropItem: {fileID: 4932707781630036979, guid: de52dcb7570e79c4e93c9448976d1fcd,
     type: 3}
+  rb2D: {fileID: 1326425827952264471}
