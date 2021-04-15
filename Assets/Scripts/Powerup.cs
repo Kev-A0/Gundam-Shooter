@@ -4,7 +4,7 @@ using UnityEngine;
 
 /// <summary>
 /// We extend from MonoBehaviour which allows us to drag and drop scripts or behaviors onto game objects to control them in Unity
-/// 
+/// This is also the script class for powerups giving the player special abilities
 /// Name: Saksham Bhardwaj
 /// StudentNo: A01185352
 /// </summary>
