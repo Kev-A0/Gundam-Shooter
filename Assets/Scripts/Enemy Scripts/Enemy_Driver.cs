@@ -42,7 +42,7 @@ public class Enemy_Driver : MonoBehaviour
     /// This array holds the time in seconds. The numbers are used to spawn the enemies at a correct time.
     /// Added on April 7, 2021
     /// </summary>
-    private int[] spawnTimeList = {3, 5, 10, 15, 20, 21, 23, 30, 35, 36, 39, 44, 46, 50, 55, 58 };
+    private int[] spawnTimeList = {3, 5, 10, 15, 20, 21, 23, 31, 35, 36, 39, 44, 46, 50, 55, 58 };
 
     /// <summary>
     /// Method from MonoBehaviour. The first one to be called when the Scene loads.
@@ -99,7 +99,7 @@ public class Enemy_Driver : MonoBehaviour
         }
 
         // Set a time for the boss to spawn.
-        spawnList.Add(2, boss_event);
+        spawnList.Add(30, boss_event);
 
 
     }
