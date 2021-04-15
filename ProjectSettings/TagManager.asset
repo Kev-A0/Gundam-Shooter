@@ -9,9 +9,6 @@ TagManager:
   - PowerUp
   - Enemy_Bullet
   - Boss Health Bar
-  - Background_Music
-  - Explosion
-  - SpecialPowerUp
   layers:
   - Default
   - TransparentFX

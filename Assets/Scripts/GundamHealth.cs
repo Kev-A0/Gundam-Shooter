@@ -20,8 +20,6 @@ public class GundamHealth : MonoBehaviour
     public Image[] lives;
     public Sprite fullLives;
     public Sprite emptyLives;
-
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -76,9 +74,8 @@ public class GundamHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            
             GetComponent<Player>().death();
-            
+
             foreach (Image life in lives)
             {
                 life.sprite = emptyLives;
@@ -95,12 +92,14 @@ public class GundamHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            loseHealth(1);  
+            loseHealth(1);
+            
         }
 
         if (collision.gameObject.tag == "Enemy_Bullet")
         {
             loseHealth(1);
+
         }
     }
 }

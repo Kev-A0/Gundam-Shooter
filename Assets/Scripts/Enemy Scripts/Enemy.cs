@@ -79,8 +79,6 @@ public class Enemy : MonoBehaviour, ISpawn
     /// </summary>
     [SerializeField]
     private GameObject dropItem;
-    [SerializeField]
-    private GameObject specialDropItem;
 
     /// <summary>
     ///  This holds a reference to this game object's Rigidbody2D.
@@ -144,11 +142,6 @@ public class Enemy : MonoBehaviour, ISpawn
         if (dropChance >= dropRate)
         {   
             Instantiate(dropItem, GetComponent<Transform>().position, Quaternion.identity);
-        }
-        int specialDropChance = Random.Range(0, 50);
-        if (specialDropChance <= dropRate)
-        {
-            Instantiate(specialDropItem, GetComponent<Transform>().position, Quaternion.identity);
         }
     }
 

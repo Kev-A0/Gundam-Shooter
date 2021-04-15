@@ -28,22 +28,9 @@ public class Shooting : MonoBehaviour
             Shoot();
         }
 
-        if (GetComponent<GundamSpecial>().specialAvaliable == 0)
+        if (Input.GetKey("e"))
         {
-            if (Input.GetKey("e"))
-            {
-                Debug.Log("e is disable");
-            }
-        }
-        else if (GetComponent<GundamSpecial>().specialAvaliable == 1)
-        {
-            if (Input.GetKey("e"))
-            {
-                SpecialMove();
-                GetComponent<GundamSpecial>().specialAvaliable -= GetComponent<GundamSpecial>().specialAvaliable;
-                Debug.Log(GetComponent<GundamSpecial>().specialAvaliable);
-            }
-            
+            SpecialMove();
         }
     }
 
