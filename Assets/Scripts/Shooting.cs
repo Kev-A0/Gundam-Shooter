@@ -20,6 +20,8 @@ public class Shooting : MonoBehaviour
     public float bulletSpeed = 13f;
     public float laserSpeed = 15f;
 
+    private float timeLeft = 1.0f;
+
     // Update is called once per frame
     void Update() 
     {
@@ -28,6 +30,7 @@ public class Shooting : MonoBehaviour
             Shoot();
         }
 
+        // This is the special shot part
         if (GetComponent<GundamSpecial>().specialAvaliable == 0)
         {
             if (Input.GetKey("e"))
@@ -39,13 +42,21 @@ public class Shooting : MonoBehaviour
         {
             if (Input.GetKey("e"))
             {
+                timeLeft -= Time.deltaTime;
                 SpecialMove();
-                GetComponent<GundamSpecial>().specialAvaliable -= GetComponent<GundamSpecial>().specialAvaliable;
+                
+                if (timeLeft < 0)
+                {
+                    GetComponent<GundamSpecial>().specialAvaliable -= GetComponent<GundamSpecial>().specialAvaliable;
+                    timeLeft = 1.0f;
+                }
                 Debug.Log(GetComponent<GundamSpecial>().specialAvaliable);
             }
             
         }
     }
+
+
 
     /// <summary>
     /// This method is to handle the projectile that is shooting 
@@ -58,8 +69,6 @@ public class Shooting : MonoBehaviour
         rd2D = projectile.GetComponent<Rigidbody2D>();
         // making the bullet shoot
         rd2D.AddForce(shootingPoint.up * bulletSpeed, ForceMode2D.Impulse);
-
-
     }
 
 
